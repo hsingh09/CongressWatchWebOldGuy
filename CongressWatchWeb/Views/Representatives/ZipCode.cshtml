@@ -1,0 +1,50 @@
+@model IEnumerable<CongressWatchWeb.Models.Representative>
+
+@{
+    ViewData["Title"] = "Representatives By ZipCode";
+}
+
+<h2>Representatives By Zip Code</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.firstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.lastName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.state)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.chamber)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.firstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.lastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.state)
+            </td>
+            @if (Html.ValueFor(modelItem => item.chamber) == "0")
+            {
+                <td>House</td>
+            }
+            else if (Html.ValueFor(modelItem => item.chamber) == "1")
+            {
+                <td>Senate</td>
+            }
+        </tr>
+}
+    </tbody>
+</table>

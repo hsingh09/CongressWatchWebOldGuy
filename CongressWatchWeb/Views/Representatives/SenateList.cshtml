@@ -1,0 +1,77 @@
+@model IEnumerable<CongressWatchWeb.Models.RepresentativeDetail>
+
+@{
+    ViewData["Title"] = "Senate";
+}
+
+<h2>Senate</h2>
+
+<form>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.firstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.lastName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.party)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.phone)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        <input type="checkbox" name="id" value="@Html.ValueFor(modelItem => item.representativeId)" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.firstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.lastName)
+                    </td>
+                    @if (Html.ValueFor(modelItem => item.party) == "0")
+            {
+                        <td><font color="blue">Democratic</font></td>
+            }
+            else if (Html.ValueFor(modelItem => item.party) == "1")
+            {
+                        <td><font color="red">Republican</font></td>
+            }
+            else if (Html.ValueFor(modelItem => item.party) == "2")
+            {
+                        <td>Independent</td>
+            }
+            else if (Html.ValueFor(modelItem => item.party) == "3")
+            {
+                        <td>Socialist</td>
+            }
+            else if (Html.ValueFor(modelItem => item.party) == "4")
+            {
+                        <td><font color="pink">Communist</font></td>
+            }
+            else if (Html.ValueFor(modelItem => item.party) == "5")
+            {
+                        <td><font color="green">Green</font></td>
+            }
+            else if (Html.ValueFor(modelItem => item.party) == "6")
+            {
+                        <td>Other</td>
+            }
+                    <td>
+                        @Html.DisplayFor(modelItem => item.phone)
+                    </td>
+                </tr>
+}
+        </tbody>
+    </table>
+</form>

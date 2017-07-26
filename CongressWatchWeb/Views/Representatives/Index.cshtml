@@ -1,0 +1,19 @@
+@{
+    ViewData["Title"] = "Representatives";
+}
+
+<h2>Representatives</h2>
+
+<form asp-action="ZipCode">
+    <div class="form-group">
+        <label class="col-md-2 control-label">Zip Code:</label>
+        <div class="col-md-10">
+            <input name="zipcode" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Get" class="btn btn-default" />
+        </div>
+    </div>
+</form>
