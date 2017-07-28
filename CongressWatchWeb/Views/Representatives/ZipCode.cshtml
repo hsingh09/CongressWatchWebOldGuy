@@ -6,32 +6,25 @@
 
 <h2>Representatives By Zip Code</h2>
 
-<table class="table">
+<table class="table table-rep">
     <thead>
-        <tr>
+        <tr class="tr-rep-head">
                 <th>
-                    @Html.DisplayNameFor(model => model.firstName)
+                    Name
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.lastName)
+                    State
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.state)
+                    Chamber
                 </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.chamber)
-                </th>
-            <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        <tr>
+        <tr class="tr-rep">
             <td>
-                @Html.DisplayFor(modelItem => item.firstName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.lastName)
+                @Html.DisplayFor(modelItem => item.firstName) @Html.DisplayFor(modelItem => item.lastName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.state)
