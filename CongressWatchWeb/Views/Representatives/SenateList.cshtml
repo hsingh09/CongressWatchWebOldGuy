@@ -10,29 +10,18 @@
     <table class="table table-rep">
         <thead>
             <tr class="tr-rep-head">
-                <th>
-                </th>
-                <th>
-                    Name
-                </th>
-                <th>
-                    Party
-                </th>
-                <th>
-                    Phone
-                </th>
+                <th/>
+                <th>Name</th>
+                <th>Party</th>
+                <th>Phone</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var item in Model)
             {
                 <tr class="tr-rep tr-rep-party-@Html.ValueFor(modelItem => item.party)">
-                    <td>
-                        <input type="checkbox" name="id" value="@Html.ValueFor(modelItem => item.representativeId)" />
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.firstName) @Html.DisplayFor(modelItem => item.lastName)
-                    </td>
+                    <td><input type="checkbox" name="id" value="@Html.ValueFor(modelItem => item.representativeId)" /></td>
+                    <td>@Html.DisplayFor(modelItem => item.firstName) @Html.DisplayFor(modelItem => item.lastName)</td>
                     @if (Html.ValueFor(modelItem => item.party) == "0")
                     {
                         <td>Democratic</td>
@@ -61,9 +50,7 @@
                     {
                         <td>Other</td>
                     }
-                    <td>
-                        @Html.DisplayFor(modelItem => item.phone)
-                    </td>
+                    <td>@Html.DisplayFor(modelItem => item.phone)</td>
                 </tr>
             }
         </tbody>

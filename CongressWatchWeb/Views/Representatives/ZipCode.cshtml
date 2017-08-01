@@ -9,26 +9,16 @@
 <table class="table table-rep">
     <thead>
         <tr class="tr-rep-head">
-                <th>
-                    Name
-                </th>
-                <th>
-                    State
-                </th>
-                <th>
-                    Chamber
-                </th>
+            <th>Name</th>
+            <th>State</th>
+            <th>Chamber</th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr class="tr-rep">
-            <td>
-                @Html.DisplayFor(modelItem => item.firstName) @Html.DisplayFor(modelItem => item.lastName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.state)
-            </td>
+            <td>@Html.DisplayFor(modelItem => item.firstName) @Html.DisplayFor(modelItem => item.lastName)</td>
+            <td>@Html.DisplayFor(modelItem => item.state)</td>
             @if (Html.ValueFor(modelItem => item.chamber) == "0")
             {
                 <td>House</td>
