@@ -74,26 +74,32 @@ textarea {
 }
 
 .tr-rep-party-0 {
+    /* Democratic */
     background-color: #004581;
 }
 
 .tr-rep-party-1 {
+    /* Republican */
     background-color: #730000;
 }
 
 .tr-rep-party-2 {
+    /* Independent */
     background-color: #545454;
 }
 
 .tr-rep-party-3 {
+    /* Socialist */
     background-color: #9b7600;
 }
 
 .tr-rep-party-4 {
+    /* Communist */
     background-color: #d783a4;
     color: #000000;
 }
 
 .tr-rep-party-5 {
+    /* Green */
     background-color: #007102;
 }
